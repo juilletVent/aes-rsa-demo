@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h3>AES RSA and digital signature demo</h3>
+    <div class="data-layout">
+      <div class="item-group">
+        <span class="item-label">Plain text:</span><span id="plain-data"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">AES encrypt data(base64)：</span
+        ><span id="aes-encrypt"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">AES decrypt data：</span
+        ><span id="aes-decrypt"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">RSA encrypt data(base64)：</span
+        ><span id="rsa-encrypt"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">RSA decrypt data：</span
+        ><span id="rsa-decrypt"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">RSA digital signature(base64)：</span
+        ><span id="rsa-signature"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">RSA digital signature check：</span
+        ><span id="rsa-signature-check"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">MD5：</span><span id="md5"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">SHA1：</span><span id="sha1"></span>
+      </div>
+      <div class="item-group">
+        <span class="item-label">SHA256：</span><span id="sha256"></span>
+      </div>
+    </div>
+  </body>
+  <script src="./dist/main.js"></script>
+</html>
