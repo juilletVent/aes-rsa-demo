@@ -1,5 +1,5 @@
 import JSencrypt from "jsencrypt";
-import CryptoJS from "crypto-js";
+import { SignUtils } from "./SignUtils";
 
 // openssl 证书生成指令，2048 为密钥长度
 // openssl genrsa -out rsa_private.key 2048
@@ -36,9 +36,7 @@ class RSAUtils {
     sign.setPublicKey(this.publicKey);
     // TODO 常用加签方法：md5、sha1、sha256、sha512
     // 如果你的应用端使用了不同的加签方法，这里需要修改
-    var verified = sign.verify(data, signature, (p) =>
-      CryptoJS.SHA256(p).toString()
-    );
+    var verified = sign.verify(data, signature, SignUtils.signSHA256);
     return verified;
   }
 
@@ -46,11 +44,7 @@ class RSAUtils {
   digitalSign(data: string) {
     const sign = new JSencrypt();
     sign.setPrivateKey(this.privateKey);
-    const signature = sign.sign(
-      data,
-      (p) => CryptoJS.SHA256(p).toString(),
-      "sha256"
-    );
+    const signature = sign.sign(data, SignUtils.signSHA256, "sha256");
     return signature;
   }
 }
